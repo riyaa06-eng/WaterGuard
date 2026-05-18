@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block title %}About | Water Quality Analysis{% endblock %}
+
+{% block content %}
+
+<div class="about-section">
+
+    <div class="card" style="margin-top: 2rem;">
+
+        <h1 style="color: var(--primary-dark); margin-bottom: 1.5rem;">
+            About WaterGuard
+        </h1>
+
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
+            WaterGuard is a Machine Learning based water quality analysis system
+            designed to predict whether water is safe or unsafe for human consumption.
+            The system analyzes different chemical parameters present in water and
+            provides instant prediction results through an interactive web application.
+        </p>
+
+        <h2 style="margin-bottom: 1rem;">Project Objective</h2>
+
+        <p style="margin-bottom: 2rem; line-height: 1.8;">
+            The main objective of this project is to create an easy-to-use platform
+            that helps users quickly analyze water quality using Artificial Intelligence.
+            Clean and safe drinking water is essential for health, and this system
+            aims to simplify the process of water safety prediction.
+        </p>
+
+        <h2 style="margin-bottom: 1rem;">How It Works</h2>
+
+        <p style="margin-bottom: 2rem; line-height: 1.8;">
+            Users enter different water quality parameters such as Aluminium,
+            Arsenic, Barium, Chloramine, Nitrates, Radium and others.
+            The input data is processed using a trained Random Forest Machine Learning model,
+            which predicts whether the water is safe or unsafe.
+        </p>
+
+        <h2 style="margin-bottom: 1rem;">Parameters Analyzed</h2>
+
+        <div class="features-grid"
+             style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 2rem;">
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Aluminium</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Arsenic</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Barium</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Cadmium</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Chloramine</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Chromium</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Viruses</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Nitrates</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Radium</div>
+
+            <div style="background: var(--primary-light); padding: 1rem; border-radius: 12px; font-weight: 600;">Silver</div>
+
+        </div>
+
+        <h2 style="margin-bottom: 1rem;">Technologies Used</h2>
+
+        <ul style="list-style: none; margin-bottom: 2rem;">
+
+            <li style="margin-bottom: 1rem;">
+                Python
+            </li>
+
+            <li style="margin-bottom: 1rem;">
+                FastAPI
+            </li>
+
+            <li style="margin-bottom: 1rem;">
+                Scikit-learn
+            </li>
+
+            <li style="margin-bottom: 1rem;">
+                Random Forest Classifier
+            </li>
+
+            <li style="margin-bottom: 1rem;">
+                HTML, CSS and JavaScript
+            </li>
+
+            <li style="margin-bottom: 1rem;">
+                NumPy and Pandas
+            </li>
+
+        </ul>
+
+        <h2 style="margin-bottom: 1rem;">Disclaimer</h2>
+
+        <p style="line-height: 1.8;">
+            This prediction system is developed for educational and analytical purposes.
+            The results are generated using Machine Learning techniques and should not
+            replace official laboratory water testing methods.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

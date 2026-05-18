@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+
+{% block title %}Predict | Water Quality Analysis{% endblock %}
+
+{% block content %}
+<div class="predict-container">
+    <div class="predict-card card">
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h1 style="
+                background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.5rem;
+            ">
+                Water Safety Assessment
+            </h1>
+
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                Enter approximate values. Exact measurements are not required.
+            </p>
+        </div>
+
+        <form action="/predict" method="post" class="predict-form">
+
+            <!-- Aluminium -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="aluminium">Aluminium (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.05 | Maximum allowed limit is usually 0.2
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="aluminium"
+                    id="aluminium"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Arsenic -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="arsenic">Arsenic (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.01 | Toxic metalloid naturally found in groundwater
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="arsenic"
+                    id="arsenic"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Barium -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="barium">Barium (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 1.0 | A metallic element found in nature
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    name="barium"
+                    id="barium"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Cadmium -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="cadmium">Cadmium (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.003 | Found in industrial waste
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="cadmium"
+                    id="cadmium"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Chloramine -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="chloramine">Chloramine (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 4.0 | Disinfectant for water
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    name="chloramine"
+                    id="chloramine"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Chromium -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="chromium">Chromium (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.05 | Can be toxic at high levels
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="chromium"
+                    id="chromium"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Viruses -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="viruses">Viruses (cfu/mL)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.0 | Should be negligible in safe water
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="viruses"
+                    id="viruses"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Nitrates -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="nitrates">Nitrates (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 10 | High nitrates can affect drinking water safety
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    name="nitrates"
+                    id="nitrates"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Radium -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="radium">Radium (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.1 | Radioactive element found in groundwater
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="radium"
+                    id="radium"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            <!-- Silver -->
+            <div class="form-group">
+                <div class="tooltip">
+                    <label for="silver">Silver (mg/L)</label>
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">
+                        Example: 0.05 | Used in some water purification but toxic at high doses
+                    </span>
+                </div>
+
+                <input
+                    type="number"
+                    step="0.001"
+                    min="0"
+                    name="silver"
+                    id="silver"
+                    placeholder="Enter value"
+                    required
+                >
+            </div>
+
+            
+
+            <!-- Submit Button -->
+            <div class="form-group full-width" style="margin-top: 2rem;">
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="
+                        width: 100%;
+                        font-size: 1.25rem;
+                        padding: 1.2rem;
+                        box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);
+                    "
+                >
+                    Check Water Safety
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

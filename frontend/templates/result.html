@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Result | Water Quality Analysis{% endblock %}
+
+{% block content %}
+<div class="result-container">
+    <div class="card" style="width: 100%; max-width: 600px;">
+        <h2 style="margin-bottom: 2rem; color: var(--text-main);">Prediction Analysis Complete</h2>
+        
+        <div class="result-badge {% if prediction == 'Safe Water' %}safe-badge{% else %}unsafe-badge{% endif %}">
+    {{ prediction }}
+</div>
+
+        <div style="margin-top: 2rem; color: var(--text-muted); text-align: left; padding: 1rem; background: var(--primary-light); border-radius: 12px;">
+            <p><strong><i class="fas fa-info-circle"></i> Disclaimer:</strong> This prediction is based on a Random Forest machine learning model and should be used for informational purposes only. Always consult with certified laboratory testing for official water safety certification.</p>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+            <a href="/predict" class="btn btn-primary">Test Another Sample</a>
+            <a href="/" class="btn" style="background: var(--text-main); color: white;">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
