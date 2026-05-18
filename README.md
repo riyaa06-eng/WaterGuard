@@ -1,34 +1,118 @@
-WaterGuard – Water Quality Analysis System
-Project Overview
+WaterGuard AI: Advanced Water Quality Prediction System 
 
-WaterGuard is a Machine Learning based web application designed to predict whether water is safe or unsafe for human consumption. The system analyzes multiple chemical parameters of water and provides instant prediction results using a trained Random Forest Classifier model.
+WaterGuard AI is a premium, professional-grade water safety analysis platform designed to provide real-time water quality assessment. It combines a machine learning powered backend with a modern and responsive web interface to deliver fast, intelligent, and user-friendly water safety predictions.
 
-The project combines Machine Learning with a modern web interface to create an easy-to-use water quality prediction platform.
 
-Features
-Predicts water safety using Machine Learning
-Interactive and user-friendly interface
-FastAPI based backend integration
-Real-time prediction results
-Separate Home, Predict and About pages
-Responsive modern UI design
-Technologies Used
+
+🚀 Features
+Modern Responsive UI: Clean and professional interface with smooth user experience.
+Real-time Water Analysis: Instant prediction of water safety based on selected chemical parameters.
+Machine Learning Integration: Predictive analysis using trained classification models.
+Dynamic Prediction Results: Displays whether the water is Safe or Unsafe instantly.
+Feature Selection Pipeline: Optimized prediction using selected important features.
+Interactive Input Forms: User-friendly forms with validation and tooltips.
+FastAPI Backend Integration: High-performance API for real-time predictions.
+
+
+
+🛠️ Tech Stack
+
 Frontend
-HTML
-CSS
-JavaScript
+Framework: HTML5 + Jinja2 Templates
+Styling: CSS3
+Icons: Font Awesome
+Templating Engine: Jinja2
+
 Backend
-FastAPI
-Python
+Framework: FastAPI (Python)
+Server: Uvicorn
+
 Machine Learning
-Scikit-learn
+Library: Scikit-learn
+Algorithms:
+K-Nearest Neighbors (KNN)
+Logistic Regression
 Random Forest Classifier
-NumPy
-Pandas
-Parameters Analyzed
+Data Processing: NumPy & Pandas
+Feature Selection: SelectKBest
+Scaling: StandardScaler
+Serialization: Pickle
 
-The system predicts water quality using the following parameters:
 
+
+📁 Project Structure
+ANTIGRAVITY_WATER_QUALITY_PROJECT/
+│
+├── backend/                     # FastAPI Backend
+│   ├── __pycache__/
+│   ├── features.pkl             # Selected feature names
+│   ├── main.py                  # Main FastAPI application
+│   ├── model.pkl                # Trained ML model
+│   ├── scaler.pkl               # StandardScaler object
+│   └── requirements.txt         # Python dependencies
+│
+├── frontend/                    # Frontend UI
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── main.css         # Main stylesheet
+│   │   │
+│   │   ├── images/
+│   │   │   └── hero-water.png   # UI assets
+│   │   │
+│   │   └── js/
+│   │
+│   ├── templates/
+│   │   ├── about.html
+│   │   ├── index.html
+│   │   ├── layout.html
+│   │   ├── predict.html
+│   │   └── result.html
+│   │
+│   └── package-lock.json
+│
+├── notebook/
+│   └── water_analysis.ipynb     # Model training notebook
+│
+├── .gitignore
+└── README.md
+
+
+
+⚙️ Setup & Installation
+1. Backend Setup
+
+Navigate to the backend directory:
+cd backend
+
+Activate virtual environment:
+.venv\Scripts\activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run FastAPI server:
+uvicorn main:app --reload
+
+🌐 Open Application
+
+Open browser and visit:
+http://127.0.0.1:8000
+
+
+
+📊 ML Model Details
+
+The system utilizes multiple machine learning models trained on water quality datasets to determine whether water is safe for consumption.
+
+Models Trained
+K-Nearest Neighbors (KNN)
+Logistic Regression
+Random Forest Classifier
+
+Final Selected Model
+✅ Random Forest Classifier
+
+Selected Features Used
 Aluminium
 Arsenic
 Barium
@@ -39,9 +123,23 @@ Viruses
 Nitrates
 Radium
 Silver
-Machine Learning Model
-Model Used: Random Forest Classifier
-Data Preprocessing: StandardScaler
-Accuracy Achieved: 91.5%
 
-The model was trained using water quality datasets and integrated into the FastAPI backend using Pickle files.
+
+
+📈 Model Performance
+Model	Accuracy
+KNN	: 89.7%
+Logistic Regression	: 89.41%
+Random Forest   : 91.91%
+
+Random Forest achieved the highest accuracy and was selected for deployment.
+
+
+
+🔮 Future Enhancements
+Cloud Deployment
+Real-time IoT Sensor Integration
+Water Quality Report Generation
+Historical Prediction Tracking
+User Authentication System
+Interactive Analytics Dashboard
